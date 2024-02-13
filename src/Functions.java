@@ -6,6 +6,50 @@ import java.util.Scanner;
 import java.sql.*;
 
 public class Functions {
+    public static void AuthorS(){
+        SearchBookAuthor Authors = new SearchBookAuthor() {
+            @Override
+            public void ByAuthor() {
+                Scanner userInput = new Scanner(System.in);
+                String url = "jdbc:postgresql://localhost:5432/practice";
+                String user = "postgres";
+                String password = "Marvin123+";
+
+                Connection connection = null;
+
+                try{
+                    connection = DriverManager.getConnection(url,user, password);
+                    System.out.println("Enter Author's name:");
+                    String author = userInput.nextLine();
+                    String sql = "SELECT * FROM books WHERE author = (?)";
+
+                    try(PreparedStatement statement = connection.prepareStatement(sql)){
+                        statement.setString(1,author);
+                        ResultSet resultSet = statement.executeQuery();{
+                            while (resultSet.next()){
+                                String btitle = resultSet.getString("title");
+                                String Author = resultSet.getString("author");
+                                String illustrator = resultSet.getString("illustrator");
+                                String genre = resultSet.getString("genre");
+                                int pagenum = resultSet.getInt("pagenum");
+
+                                System.out.println(" Title: " + btitle + " Author: " + Author + " Illustrator: " + illustrator + " Genre: " + genre + " Number of pages: " + pagenum);
+                            }
+                        }
+                    }
+
+
+                }catch (SQLException e){
+                    System.out.println("Connection error: " + e.getErrorCode());
+                    e.printStackTrace();
+                }
+            }
+        }; {
+
+        };
+        Authors.ByAuthor();
+    }
+
     public static void TitleS(){
         SearchBookName Titles = new SearchBookName() {
             @Override
@@ -123,6 +167,9 @@ interface SearchBookName {
     void nameSearch();
 }
 
+interface SearchBookAuthor {
+    void ByAuthor();
+}
 
 
 

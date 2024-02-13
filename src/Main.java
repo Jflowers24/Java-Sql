@@ -23,9 +23,12 @@ public class Main {
 
 
         }
-        /*Functions.BookS();*/
-        Functions.TitleS();
-
+        Boolean condition = true;
+        while (condition == true) {
+            /*Functions.BookS();*/
+            Functions.TitleS();
+            Functions.AuthorS();
+        }
 
 
 
