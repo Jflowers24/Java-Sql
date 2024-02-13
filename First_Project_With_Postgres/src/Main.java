@@ -9,12 +9,12 @@ import java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Scanner userInput = new Scanner(System.in);
-        String url = "jdbc:postgresql://localhost:5432/practice";
-        String user = "postgres";
-        String password = "Marvin123+";
+//        Scanner userInput = new Scanner(System.in);
+//        String url = "jdbc:postgresql://localhost:5432/postgres";
+//        String user = "postgres";
+//        String password = "Marvin123+";
 
-        try (Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/practice", "postgres", "Marvin123+")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgrs", "postgres", "71805Ml$")) {
             System.out.println("successfully Logged in");
         } catch (SQLException e) {
 
