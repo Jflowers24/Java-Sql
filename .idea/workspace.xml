@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ad797d1-5d4b-4b3d-ae08-d5d8eb03c5f1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/First_Project_With_Postgres/SQL/schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/First_Project_With_Postgres/src/Functions.java" beforeDir="false" afterPath="$PROJECT_DIR$/First_Project_With_Postgres/src/Functions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/First_Project_With_Postgres/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/First_Project_With_Postgres/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Sql/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Sql/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/First_Project_With_Postgres/SQL/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/First_Project_With_Postgres/SQL/schema.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +31,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "Database Script.schema.sql.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
@@ -41,8 +39,9 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "JFlowers",
+    "git-widget-placeholder": "MinaLouise",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/basecampcodingacademy/Java-Sql",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -54,8 +53,15 @@
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+      "directory",
+      "module"
+    ],
     "DatabaseDriversLRU": [
       "postgresql"
+    ],
+    "RunConfigurationTargetLRU": [
+      "3bbf8df0-72e8-4a4d-a038-a7a2db3adf17"
     ]
   }
 }]]></component>
@@ -71,6 +77,12 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="schema.sql" type="DatabaseScript" editBeforeRun="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/First_Project_With_Postgres/SQL/schema.sql" />
+      <script-mode>FILE</script-mode>
+      <data-source id="3bbf8df0-72e8-4a4d-a038-a7a2db3adf17" />
+      <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
@@ -95,6 +107,7 @@
       <updated>1707770639404</updated>
       <workItem from="1707770640542" duration="587000" />
       <workItem from="1707835838266" duration="2924000" />
+      <workItem from="1707843565165" duration="2556000" />
     </task>
     <servers />
   </component>
