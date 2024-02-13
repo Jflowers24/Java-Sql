@@ -4,15 +4,17 @@ import java.sql.SQLException;
 import java.util.Scanner;
 import java.sql.*;
 
+
+
 public class Functions {
     public static void BookS(){
         BookCreation Books = new BookCreation() {
             @Override
             public void bookMake() {
                 Scanner userInput = new Scanner(System.in);
-                String url = "jdbc:postgresql://localhost:5432/practice";
+                String url = "jdbc:postgresql://localhost:5432/HarlemHeritage";
                 String user = "postgres";
-                String password = "Marvin123+";
+                String password = "71805Ml$";
 
                 Connection connection = null;
 
