@@ -12,7 +12,7 @@ public class Functions {
             @Override
             public void bookMake() {
                 Scanner userInput = new Scanner(System.in);
-                String url = "jdbc:postgresql://localhost:5432/postgres";
+                String url = "jdbc:postgresql://localhost:5432/HarlemHeritage";
                 String user = "postgres";
                 String password = "71805Ml$";
 
