@@ -31,7 +31,7 @@ public class Functions {
                     String genre = userInput.nextLine();
                     System.out.print("Enter Book Number of Pages:");
                     int pagenum = userInput.nextInt();
-                    String sql = "INSERT INTO books (author, illustrator, genre, pagenum, title) VALUES (?,?,?,?,?)";
+                    String sql = "INSERT INTO books(author, illustrator, genre, pagenum, title) VALUES (?,?,?,?,?)";
 
                     try (PreparedStatement statement = connection.prepareStatement(sql)) {
                         statement.setString(1,author);
