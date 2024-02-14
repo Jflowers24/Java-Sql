@@ -14,7 +14,7 @@ public class Main {
 //        String user = "postgres";
 //        String password = "Marvin123+";
 
-        try (Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgrs", "postgres", "71805Ml$")) {
+        try (Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/HarlemHeritage", "postgres", "71805Ml$")) {
             System.out.println("successfully Logged in");
         } catch (SQLException e) {
 

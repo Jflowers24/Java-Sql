@@ -5,11 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ad797d1-5d4b-4b3d-ae08-d5d8eb03c5f1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/First_Project_With_Postgres/SQL/schema.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qodana.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/First_Project_With_Postgres/src/Functions.java" beforeDir="false" afterPath="$PROJECT_DIR$/First_Project_With_Postgres/src/Functions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/First_Project_With_Postgres/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/First_Project_With_Postgres/src/Main.java" afterDir="false" />
@@ -126,7 +121,8 @@
       <workItem from="1707770640542" duration="587000" />
       <workItem from="1707835838266" duration="2924000" />
       <workItem from="1707843565165" duration="2556000" />
-      <workItem from="1707854994058" duration="832000" />
+      <workItem from="1707854994058" duration="1607000" />
+      <workItem from="1707857337816" duration="1465000" />
     </task>
     <servers />
   </component>
