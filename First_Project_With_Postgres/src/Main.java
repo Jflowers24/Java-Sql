@@ -9,10 +9,10 @@ import java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Scanner userInput = new Scanner(System.in);
-        String url = "jdbc:postgresql://localhost:5432/HarlemHeritage";
-        String user = "postgres";
-        String password = "71805Ml$";
+//        Scanner userInput = new Scanner(System.in);
+        String url = DatabaseConfigurations.getUrl();
+        String user = DatabaseConfigurations.getUser();
+        String password = DatabaseConfigurations.getPassword();
 
         try (Connection connection = DriverManager.getConnection(url, user, password)) {
             System.out.println("successfully Logged in");
@@ -25,7 +25,7 @@ public class Main {
         }
         Boolean condition = true;
         while (condition == true) {
-            Functions.BookS();
+            Functions.WelcomeS();
             Functions.TitleS();
             Functions.AuthorS();
             Functions.GenreS();
