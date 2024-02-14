@@ -6,6 +6,154 @@ import java.util.Scanner;
 import java.sql.*;
 
 public class Functions {
+    public static void OwnerS(){
+        ViewOwnerOfBooK Owners = new ViewOwnerOfBooK() {
+            @Override
+            public void ViewOwner() {
+                Scanner userInput = new Scanner(System.in);
+                String url = "jdbc:postgresql://localhost:5432/practice";
+                String user = "postgres";
+                String password = "Marvin123+";
+
+                Connection connection = null;
+
+                try{
+                    connection = DriverManager.getConnection(url, user, password);
+                    String author = userInput.nextLine();
+                    String sql = "SELECT * From Boo";
+
+
+
+
+                }catch (SQLException e){
+
+                }
+            }
+        };
+        Owners.ViewOwner();
+    }
+
+    public static void AllS(){
+        ViewDatabase Views = new ViewDatabase(){
+            @Override
+            public void ViewAllBooks(){
+                Scanner userInput = new Scanner(System.in);
+                String url = "jdbc:postgresql://localhost:5432/practice";
+                String user = "postgres";
+                String password = "Marvin123+";
+
+                Connection connection = null;
+
+                try {
+                    connection = DriverManager.getConnection(url,user, password);
+
+                    String author = userInput.nextLine();
+                    String sql = "SELECT * FROM books";
+                    try(PreparedStatement statement = connection.prepareStatement(sql)){
+                        ResultSet resultSet = statement.executeQuery();{
+                            while (resultSet.next()){
+                                String btitle = resultSet.getString("title");
+                                String Author = resultSet.getString("author");
+                                String illustrator = resultSet.getString("illustrator");
+                                String genre = resultSet.getString("genre");
+                                int pagenum = resultSet.getInt("pagenum");
+
+                                System.out.println(" Title: " + btitle + " Author: " + Author + " Illustrator: " + illustrator + " Genre: " + genre + " Number of pages: " + pagenum);
+
+                            }
+                        }
+                    }
+
+                }catch (SQLException e){
+
+
+                }
+
+            }
+        };
+        Views.ViewAllBooks();
+    }
+    public static void IllustratorS(){
+        illustratorSearch Illustrators = new illustratorSearch() {
+            @Override
+            public void ByIllustrator() {
+                Scanner userInput = new Scanner(System.in);
+                String url = "jdbc:postgresql://localhost:5432/practice";
+                String user = "postgres";
+                String password = "Marvin123+";
+
+                Connection connection = null;
+
+                try{
+                    connection = DriverManager.getConnection(url,user, password);
+                    System.out.println("Enter Author's name:");
+                    String author = userInput.nextLine();
+                    String sql = "SELECT * FROM books WHERE illustrator = (?)";
+
+                    try(PreparedStatement statement = connection.prepareStatement(sql)){
+                        statement.setString(1,author);
+                        ResultSet resultSet = statement.executeQuery();{
+                            while (resultSet.next()){
+                                String btitle = resultSet.getString("title");
+                                String Author = resultSet.getString("author");
+                                String illustrator = resultSet.getString("illustrator");
+                                String genre = resultSet.getString("genre");
+                                int pagenum = resultSet.getInt("pagenum");
+
+                                System.out.println(" Title: " + btitle + " Author: " + Author + " Illustrator: " + illustrator + " Genre: " + genre + " Number of pages: " + pagenum);
+                            }
+                        }
+                    }
+
+
+                }catch (SQLException e){
+                    System.out.println("Connection error: " + e.getErrorCode());
+                    e.printStackTrace();
+                }
+
+            }
+        }; {
+            Illustrators.ByIllustrator();
+        }
+
+    }
+    public static void GenreS(){
+        GenreSearch Genres = new GenreSearch() {
+            public void ByGenre(){
+                Scanner userInput = new Scanner(System.in);
+                String url = "jdbc:postgresql://localhost:5432/practice";
+                String user = "postgres";
+                String password = "Marvin123+";
+
+                Connection connection = null;
+
+                try{
+                    connection = DriverManager.getConnection(url, user, password);
+                    System.out.println("Enter Desired Genre");
+                    String Genre = userInput.nextLine();
+                    String sql = "SELECT * FROM books WHERE genre = (?)";
+                    try (PreparedStatement statement = connection.prepareStatement(sql)){
+                        statement.setString(1,Genre);
+                        ResultSet resultSet = statement.executeQuery();{
+                            while (resultSet.next()){
+                                String btitle = resultSet.getString("title");
+                                String Author = resultSet.getString("author");
+                                String illustrator = resultSet.getString("illustrator");
+                                String genre = resultSet.getString("genre");
+                                int pagenum = resultSet.getInt("pagenum");
+
+                                System.out.println(" Title: " + btitle + " Author: " + Author + " Illustrator: " + illustrator + " Genre: " + genre + " Number of pages: " + pagenum);
+                            }
+                        }
+                    }
+                }catch (SQLException e){
+                    System.out.println("Connection error: " + e.getErrorCode());
+                    e.printStackTrace();
+                }
+            }
+        };
+        Genres.ByGenre();
+    }
     public static void AuthorS(){
         SearchBookAuthor Authors = new SearchBookAuthor() {
             @Override
@@ -169,6 +317,19 @@ interface SearchBookName {
 
 interface SearchBookAuthor {
     void ByAuthor();
+}
+interface GenreSearch{
+   void ByGenre();
+}
+interface illustratorSearch{
+    void ByIllustrator();
+}
+interface ViewDatabase{
+    void ViewAllBooks();
+}
+
+interface ViewOwnerOfBooK{
+    void ViewOwner();
 }
 
 

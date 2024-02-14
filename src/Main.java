@@ -25,9 +25,12 @@ public class Main {
         }
         Boolean condition = true;
         while (condition == true) {
-            /*Functions.BookS();*/
+            Functions.BookS();
             Functions.TitleS();
             Functions.AuthorS();
+            Functions.GenreS();
+            Functions.IllustratorS();
+            Functions.AllS();
         }
 
 
