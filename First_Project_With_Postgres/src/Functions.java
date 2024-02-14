@@ -310,12 +310,20 @@ public class Functions {
     public static void WelcomeS(){
 
         WelCome Books = new WelCome() {
+            @Override
             public void welcomePage(){
                 String url = DatabaseConfigurations.getUrl();
                 String user = DatabaseConfigurations.getUser();
                 String password = DatabaseConfigurations.getPassword();
 
                 Connection connection = null;
+
+                try {
+                    connection = DriverManager.getConnection(url, user, password);
+                }
+                catch(SQLException e){
+
+                }
             }
         };
         WelCome.welcomePage();
