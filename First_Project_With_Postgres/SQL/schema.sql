@@ -1,8 +1,12 @@
+CREATE SCHEMA IF NOT EXISTS Library;
+
+SET search_path TO Library;
+
 CREATE TABLE IF NOT EXISTS Members(
     MemName varchar(500),
     MemNumber varchar(500),
     MemEmail varchar(500),
-    ID int PRIMARY KEY
+    ID serial PRIMARY KEY
 );
 
 CREATE TABLE IF NOT EXISTS Books(
@@ -15,5 +19,5 @@ CREATE TABLE IF NOT EXISTS Books(
     FOREIGN KEY (member) REFERENCES Members(ID)
 );
 
-SELECT * FROM members;
-SELECT * FROM Books;
+SELECT * FROM Library.Members;
+SELECT * FROM Library.Books;
