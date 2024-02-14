@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ad797d1-5d4b-4b3d-ae08-d5d8eb03c5f1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/First_Project_With_Postgres/src/Functions.java" beforeDir="false" afterPath="$PROJECT_DIR$/First_Project_With_Postgres/src/Functions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/First_Project_With_Postgres/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/First_Project_With_Postgres/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Sql/Functions$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Sql/Functions$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Sql/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Sql/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
