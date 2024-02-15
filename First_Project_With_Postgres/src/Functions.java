@@ -61,7 +61,7 @@ public class Functions {
                                 String genre = resultSet.getString("genre");
                                 int pagenum = resultSet.getInt("pagenum");
 
-                                System.out.println(" Title: " + btitle + " Author: " + Author + " Illustrator: " + illustrator + " Genre: " + genre + " Number of pages: " + pagenum);
+                                System.out.println(" Title: " + btitle + "\n" + " Author: " + Author + "\n" + " Illustrator: " + illustrator + "\n" + " Genre: " + genre + "\n" + " Number of pages: " + pagenum);
 
                             }
                         }
@@ -375,6 +375,55 @@ public class Functions {
         Welcomes.WelcomePage();
     }
 
+    public static void CheckOut(){
+        String url = DatabaseConfigurations.getUrl();
+        String user = DatabaseConfigurations.getUser();
+        String password = DatabaseConfigurations.getPassword();
+
+        try (Connection connection = DriverManager.getConnection(url, user, password)){
+            System.out.println("Enter the title of the book you want to checkout: ");
+            String title = userInput.nextLine();
+
+            String sql = "UPDATE library.books SET checked_out = true WHERE title = ?";
+            try (PreparedStatement statement = connection.prepareStatement(sql)) {
+                statement.setString(1, title);
+                int rowsUpdated = statement.executeUpdate();
+                if (rowsUpdated > 0) {
+                    System.out.println("Book \"" + title + "\" checked out successfully.");
+                } else {
+                    System.out.println("Book \"" + title + "\" not found or already checked out.");
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println("Connection error: " + e.getErrorCode());
+            e.printStackTrace();
+        }
+    }
+
+    public static void CheckIn(){
+        String url = DatabaseConfigurations.getUrl();
+        String user = DatabaseConfigurations.getUser();
+        String password = DatabaseConfigurations.getPassword();
+
+        try (Connection connection = DriverManager.getConnection(url, user, password)){
+            System.out.println("Enter the title of the book you want to check in: ");
+            String title = userInput.nextLine();
+
+            String sql = "UPDATE library.books SET checked_out = false WHERE title = ?";
+            try (PreparedStatement statement = connection.prepareStatement(sql)) {
+                statement.setString(1, title);
+                int rowsUpdated = statement.executeUpdate();
+                if (rowsUpdated > 0) {
+                    System.out.println("Book \"" + title + "\" checked in successfully.");
+                } else {
+                    System.out.println("Book \"" + title + "\" not found or already checked in.");
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println("Connection error: " + e.getErrorCode());
+            e.printStackTrace();
+        }
+    }
 }
 
 interface WelcomeMessage{
@@ -395,12 +444,15 @@ interface SearchBookName {
 interface SearchBookAuthor {
     void ByAuthor();
 }
+
 interface GenreSearch{
    void ByGenre();
 }
+
 interface illustratorSearch{
     void ByIllustrator();
 }
+
 interface ViewDatabase{
     void ViewAllBooks();
 }

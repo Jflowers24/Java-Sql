@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ad797d1-5d4b-4b3d-ae08-d5d8eb03c5f1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/Java-Sql/Functions$9.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Java-Sql/SearchOptions.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/First_Project_With_Postgres/src/DatabaseConfigurations.java" beforeDir="false" afterPath="$PROJECT_DIR$/First_Project_With_Postgres/src/DatabaseConfigurations.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/First_Project_With_Postgres/src/Functions.java" beforeDir="false" afterPath="$PROJECT_DIR$/First_Project_With_Postgres/src/Functions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/First_Project_With_Postgres/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/First_Project_With_Postgres/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Sql/Functions$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Sql/Functions$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Sql/Functions$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Sql/Functions$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java-Sql/DatabaseConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Sql/DatabaseConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Java-Sql/Functions.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Sql/Functions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Sql/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Sql/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,9 +53,9 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "MinaLouise",
+    "git-widget-placeholder": "BlairJ",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/basecampcodingacademy/Java-Sql",
+    "last_opened_file_path": "C:/Users/blair/Projects/unit-7-java-BlairJ05/modules/04-java-and-sql/Java-Sql",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -117,7 +114,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.2-openjdk-21.0.2-f644763e9732-a81d5c7c" />
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
       </set>
     </attachedChunks>
   </component>
@@ -135,6 +132,7 @@
       <workItem from="1707854994058" duration="1607000" />
       <workItem from="1707857337816" duration="1465000" />
       <workItem from="1708007131559" duration="1866000" />
+      <workItem from="1708031213512" duration="747000" />
     </task>
     <servers />
   </component>
