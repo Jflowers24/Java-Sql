@@ -1,13 +1,13 @@
 import java.awt.print.Book;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.Scanner;
 import java.sql.*;
+import java.util.*;
+
+
 
 
 
 public class Functions {
+
 
     static Scanner userInput = new Scanner(System.in);
 
@@ -307,11 +307,10 @@ public class Functions {
         Books.bookMake();
         }
 
-    public static void WelcomeS(){
-
-        WelCome Books = new WelCome() {
+    public static void WelcomeS() {
+        WelcomeMessage Welcomes = new WelcomeMessage() {
             @Override
-            public void welcomePage(){
+            public void WelcomePage() {
                 String url = DatabaseConfigurations.getUrl();
                 String user = DatabaseConfigurations.getUser();
                 String password = DatabaseConfigurations.getPassword();
@@ -320,13 +319,23 @@ public class Functions {
 
                 try {
                     connection = DriverManager.getConnection(url, user, password);
-                }
-                catch(SQLException e){
 
+                    System.out.println("Welcome to HarlemHeritage!");
+                    System.out.println("Would you like to [create] a Book instance or to [search] for a pre-existing book.");
+                    String action = userInput.nextLine();
+
+                    if (Objects.equals(action, "create")) {
+                        BookS();  // Call your existing BookS function
+                    }
+                }
+                catch (SQLException e){
+                    System.out.println("Connection error: " + e.getErrorCode());
+                    e.printStackTrace();
                 }
             }
         };
-        WelCome.welcomePage();
+
+        Welcomes.WelcomePage();
     }
 
 }
