@@ -251,6 +251,41 @@ public class Functions {
 
     }
 
+    public static void SearchS(){
+        SearchOptions Searching = new SearchOptions() {
+            @Override
+            public void searchOption() {
+                String url = DatabaseConfigurations.getUrl();
+                String user = DatabaseConfigurations.getUser();
+                String password = DatabaseConfigurations.getPassword();
+
+                Connection connection = null;
+
+                try {
+                    connection = DriverManager.getConnection(url, user, password);
+
+                    System.out.println("How would you like to Search - [Title],[Author],[Illustrator],[Genre]?");
+                    String option = userInput.nextLine();
+
+                    if (Objects.equals(option, "Title")) {
+                        TitleS();
+                    } else if (Objects.equals(option, "Author")) {
+                        AuthorS();
+                    } else if (Objects.equals(option, "Author")) {
+                        IllustratorS();
+                    } else if (Objects.equals(option, "Author")) {
+                        GenreS();
+                    }
+                }
+                catch (SQLException e){
+                    System.out.println("Connection error: " + e.getErrorCode());
+                    e.printStackTrace();
+                }
+            }
+        };
+        Searching.searchOption();
+    }
+
     public static void BookS(){
         BookCreation Books = new BookCreation() {
             @Override
@@ -326,6 +361,8 @@ public class Functions {
 
                     if (Objects.equals(action, "create")) {
                         BookS();  // Call your existing BookS function
+                    } else if (Objects.equals(action, "search")) {
+                        SearchS();
                     }
                 }
                 catch (SQLException e){
@@ -346,6 +383,11 @@ interface WelcomeMessage{
 interface BookCreation {
     void bookMake();
 }
+
+interface SearchOptions{
+    void searchOption();
+}
+
 interface SearchBookName {
     void nameSearch();
 }
