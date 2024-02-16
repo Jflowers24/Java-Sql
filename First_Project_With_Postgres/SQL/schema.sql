@@ -16,6 +16,7 @@ CREATE TABLE IF NOT EXISTS Books(
     pagenum int,
     title varchar(500),
     member int,
+    checked_out boolean,
     FOREIGN KEY (member) REFERENCES Members(ID)
 );
 

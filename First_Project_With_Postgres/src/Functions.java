@@ -7,6 +7,59 @@ import java.util.*;
 
 
 public class Functions {
+    public static void MemberS(){
+        addMember Members = new addMember() {
+            @Override
+            public void addMem() {
+                Scanner userInput = new Scanner(System.in);
+                String url = "jdbc:postgresql://localhost:5432/HarlemHeritage";
+                String user = "postgres";
+                String password = "Hope_2023";
+
+                Connection connection = null;
+                try {
+                    connection = DriverManager.getConnection(url, user, password);
+                    System.out.println("New Member Process: ");
+                    System.out.print("Name:");
+                    String name = userInput.nextLine();
+                    System.out.print("Number:");
+                    int number = userInput.nextInt();
+                    System.out.print("Email:");
+                    String email = userInput.next();
+
+
+                    String sql = "INSERT INTO person (name, number, email) VALUES (?,?,?)";
+                    try(PreparedStatement statement = connection.prepareStatement(sql)) {
+                        statement.setString(1,name);
+                        statement.setInt(2,number);
+                        statement.setString(3,email);
+
+                        statement.executeUpdate();
+                        statement.close();
+
+
+                    }catch (SQLException e) {
+                        System.out.println("Connection error: " + e.getErrorCode());
+                        e.printStackTrace();
+                    }
+
+                }catch(SQLException e){
+                    System.out.println("Connection error: " + e.getErrorCode());
+                    e.printStackTrace();
+                }finally {
+                    if (connection != null) {
+                        try {
+                            connection.close();
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+
+            }
+        };
+        Members.addMem();
+    }
 
 
     static Scanner userInput = new Scanner(System.in);
@@ -89,7 +142,7 @@ public class Functions {
 
                 try{
                     connection = DriverManager.getConnection(url,user, password);
-                    System.out.println("Enter Author's name:");
+                    System.out.print("Enter Author's name: ");
                     String author = userInput.nextLine();
                     String sql = "SELECT * FROM library.books WHERE illustrator = (?)";
 
@@ -132,7 +185,7 @@ public class Functions {
 
                 try{
                     connection = DriverManager.getConnection(url, user, password);
-                    System.out.println("Enter Desired Genre");
+                    System.out.print("Enter Desired Genre: ");
                     String Genre = userInput.nextLine();
                     String sql = "SELECT * FROM library.books WHERE genre = (?)";
                     try (PreparedStatement statement = connection.prepareStatement(sql)){
@@ -170,7 +223,7 @@ public class Functions {
 
                 try{
                     connection = DriverManager.getConnection(url,user, password);
-                    System.out.println("Enter Author's name:");
+                    System.out.print("Enter Author's name: ");
                     String author = userInput.nextLine();
                     String sql = "SELECT * FROM library.books WHERE author = (?)";
 
@@ -213,7 +266,7 @@ public class Functions {
 
                 try{
                     connection = DriverManager.getConnection(url, user, password);
-                    System.out.println("Enter Title:");
+                    System.out.print("Enter Title: ");
                     String title = userInput.nextLine();
                     String sql = "SELECT * FROM library.books WHERE title = (?)";
 
@@ -264,7 +317,7 @@ public class Functions {
                 try {
                     connection = DriverManager.getConnection(url, user, password);
 
-                    System.out.println("How would you like to Search - [Title],[Author],[Illustrator],[Genre]?");
+                    System.out.print("How would you like to Search - [Title] | [Author] | [Illustrator] | [Genre]? \n>");
                     String option = userInput.nextLine();
 
                     if (Objects.equals(option, "Title")) {
@@ -356,13 +409,17 @@ public class Functions {
                     connection = DriverManager.getConnection(url, user, password);
 
                     System.out.println("Welcome to HarlemHeritage!");
-                    System.out.println("Would you like to [create] a Book instance or to [search] for a pre-existing book.");
+                    System.out.print("Would you like to [create] a Book instance, [search] for a pre-existing book, or [check in] or [check out] a book? \n>");
                     String action = userInput.nextLine();
 
-                    if (Objects.equals(action, "create")) {
+                    if (Objects.equals(action, "create")){
                         BookS();  // Call your existing BookS function
                     } else if (Objects.equals(action, "search")) {
                         SearchS();
+                    }else if (Objects.equals(action, "check in")){
+                        CheckInS();
+                    }else if (Objects.equals(action, "check out")){
+                        CheckOutS();
                     }
                 }
                 catch (SQLException e){
@@ -375,54 +432,68 @@ public class Functions {
         Welcomes.WelcomePage();
     }
 
-    public static void CheckOut(){
-        String url = DatabaseConfigurations.getUrl();
-        String user = DatabaseConfigurations.getUser();
-        String password = DatabaseConfigurations.getPassword();
+    public static void CheckOutS() {
+        CheckOutBook checkouts = new CheckOutBook() {
+            @Override
+            public void BookCheckOut() {
+                String url = DatabaseConfigurations.getUrl();
+                String user = DatabaseConfigurations.getUser();
+                String password = DatabaseConfigurations.getPassword();
 
-        try (Connection connection = DriverManager.getConnection(url, user, password)){
-            System.out.println("Enter the title of the book you want to checkout: ");
-            String title = userInput.nextLine();
+                try (Connection connection = DriverManager.getConnection(url, user, password)) {
+                    System.out.println("Enter the title of the book you want to checkout: ");
+                    String title = userInput.nextLine();
 
-            String sql = "UPDATE library.books SET checked_out = true WHERE title = ?";
-            try (PreparedStatement statement = connection.prepareStatement(sql)) {
-                statement.setString(1, title);
-                int rowsUpdated = statement.executeUpdate();
-                if (rowsUpdated > 0) {
-                    System.out.println("Book \"" + title + "\" checked out successfully.");
-                } else {
-                    System.out.println("Book \"" + title + "\" not found or already checked out.");
+                    String sql = "UPDATE library.books SET checked_out = true WHERE title = ?";
+                    try (PreparedStatement statement = connection.prepareStatement(sql)) {
+                        statement.setString(1, title);
+                        int rowsUpdated = statement.executeUpdate();
+
+                        if (rowsUpdated > 0) {
+                            System.out.println("Book \"" + title + "\" checked out successfully.");
+                        } else {
+                            System.out.println("Book \"" + title + "\" not found or already checked out.");
+                        }
+                    }
+                } catch (SQLException e) {
+                   System.out.println("Connection error: " + e.getErrorCode());
+                   e.printStackTrace();
                 }
             }
-        } catch (SQLException e) {
-            System.out.println("Connection error: " + e.getErrorCode());
-            e.printStackTrace();
-        }
+        };
+        checkouts.BookCheckOut();
     }
 
-    public static void CheckIn(){
-        String url = DatabaseConfigurations.getUrl();
-        String user = DatabaseConfigurations.getUser();
-        String password = DatabaseConfigurations.getPassword();
 
-        try (Connection connection = DriverManager.getConnection(url, user, password)){
-            System.out.println("Enter the title of the book you want to check in: ");
-            String title = userInput.nextLine();
+    public static void CheckInS() {
+        CheckInBook checkins = new CheckInBook() {
+            @Override
+            public void BookCheckIn() {
+                String url = DatabaseConfigurations.getUrl();
+                String user = DatabaseConfigurations.getUser();
+                String password = DatabaseConfigurations.getPassword();
 
-            String sql = "UPDATE library.books SET checked_out = false WHERE title = ?";
-            try (PreparedStatement statement = connection.prepareStatement(sql)) {
-                statement.setString(1, title);
-                int rowsUpdated = statement.executeUpdate();
-                if (rowsUpdated > 0) {
-                    System.out.println("Book \"" + title + "\" checked in successfully.");
-                } else {
-                    System.out.println("Book \"" + title + "\" not found or already checked in.");
+                try (Connection connection = DriverManager.getConnection(url, user, password)) {
+                    System.out.print("Enter the title of the book you want to check in: ");
+                    String title = userInput.nextLine();
+
+                    String sql = "UPDATE library.books SET checked_out = false WHERE title = ?";
+                    try (PreparedStatement statement = connection.prepareStatement(sql)) {
+                        statement.setString(1, title);
+                        int rowsUpdated = statement.executeUpdate();
+                        if (rowsUpdated > 0) {
+                            System.out.println("Book \"" + title + "\" checked in successfully.");
+                        } else {
+                            System.out.println("Book \"" + title + "\" not found or already checked in.");
+                        }
+                    }
+                } catch (SQLException e) {
+                    System.out.println("Connection error: " + e.getErrorCode());
+                    e.printStackTrace();
                 }
             }
-        } catch (SQLException e) {
-            System.out.println("Connection error: " + e.getErrorCode());
-            e.printStackTrace();
-        }
+        };
+        checkins.BookCheckIn();
     }
 }
 
@@ -461,5 +532,14 @@ interface ViewOwnerOfBooK{
     void ViewOwner();
 }
 
+interface addMember{
+    void addMem();
+}
+interface CheckOutBook{
+    void BookCheckOut();
+}
+interface CheckInBook{
+    void BookCheckIn();
+}
 
 
