@@ -21,18 +21,18 @@ public class Functions {
                     connection = DriverManager.getConnection(url, user, password);
                     System.out.println("New Member Process: ");
                     System.out.print("Name:");
-                    String name = userInput.nextLine();
+                    String memname = userInput.nextLine();
                     System.out.print("Number:");
-                    int number = userInput.nextInt();
+                    int memnumber = userInput.nextInt();
                     System.out.print("Email:");
-                    String email = userInput.next();
+                    String mememail = userInput.next();
 
 
-                    String sql = "INSERT INTO person (name, number, email) VALUES (?,?,?)";
+                    String sql = "INSERT INTO library.members (memname, memnumber, mememail) VALUES (?,?,?)";
                     try(PreparedStatement statement = connection.prepareStatement(sql)) {
-                        statement.setString(1,name);
-                        statement.setInt(2,number);
-                        statement.setString(3,email);
+                        statement.setString(1,memname);
+                        statement.setInt(2,memnumber);
+                        statement.setString(3,mememail);
 
                         statement.executeUpdate();
                         statement.close();
@@ -443,10 +443,13 @@ public class Functions {
                 try (Connection connection = DriverManager.getConnection(url, user, password)) {
                     System.out.println("Enter the title of the book you want to checkout: ");
                     String title = userInput.nextLine();
-
-                    String sql = "UPDATE library.books SET checked_out = true WHERE title = ?";
+                    System.out.println("Enter The ID: ");
+                    int ID = userInput.nextInt();
+                    String sql = "UPDATE library.books SET member = ?, checked_out = true WHERE title = ?";
                     try (PreparedStatement statement = connection.prepareStatement(sql)) {
-                        statement.setString(1, title);
+                        statement.setInt(1, ID);
+                        statement.setString(2, title);
+
                         int rowsUpdated = statement.executeUpdate();
 
                         if (rowsUpdated > 0) {
@@ -494,6 +497,9 @@ public class Functions {
             }
         };
         checkins.BookCheckIn();
+    }
+    public static void quitLoop() {
+
     }
 }
 

@@ -25,8 +25,10 @@ public class Main {
 
         }
         Boolean condition = true;
+        while (condition == true) {
 
-        Functions.WelcomeS();
+            Functions.WelcomeS();
+        }
 
 
 
