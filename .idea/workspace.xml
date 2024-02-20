@@ -5,15 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ad797d1-5d4b-4b3d-ae08-d5d8eb03c5f1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/Java-Sql/Functions$9.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Java-Sql/SearchOptions.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/First_Project_With_Postgres/src/Functions.java" beforeDir="false" afterPath="$PROJECT_DIR$/First_Project_With_Postgres/src/Functions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/First_Project_With_Postgres/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/First_Project_With_Postgres/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Sql/Functions$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Sql/Functions$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Sql/Functions$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Sql/Functions$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Sql/Functions.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Sql/Functions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java-Sql/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Java-Sql/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Functions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +19,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="HTML File" />
+        <option value="AnnotationType" />
       </list>
     </option>
   </component>
@@ -49,14 +46,16 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "Database Script.schema.sql.executor": "Run",
+    "DefaultHtmlFileTemplate": "HTML File",
     "Downloaded.Files.Path.Enabled": "false",
+    "JavaScript Debug.index.html.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "MinaLouise",
+    "git-widget-placeholder": "JFlowers",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/basecampcodingacademy/Java-Sql",
     "node.js.detected.package.eslint": "true",
@@ -83,18 +82,16 @@
     ]
   }
 }]]></component>
-  <component name="QodanaReportsService">
-    <option name="descriptions">
-      <ReportDescription localRun="true" path="/private/var/folders/9h/b8v3c4m56238976mx4y8q99h0000gn/T/qodana_output/qodana.sarif.json" reportGuid="faeddd52-b1a6-4ada-9464-fe214ee22e5f" reportId="Java-Sql/qodana/2024-02-13" />
-    </option>
-  </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/First_Project_With_Postgres" />
       <recent name="$APPLICATION_CONFIG_DIR$/consoles/db/3bbf8df0-72e8-4a4d-a038-a7a2db3adf17" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JavaScript Debug.index.html">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Java-Sql" />
@@ -108,8 +105,12 @@
       <data-source id="3bbf8df0-72e8-4a4d-a038-a7a2db3adf17" />
       <method v="2" />
     </configuration>
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Java-Sql/First_Project_With_Postgres/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
