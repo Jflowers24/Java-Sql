@@ -1,7 +1,7 @@
 class DatabaseConfig {
     static String url = "jdbc:postgresql://localhost:5432/HarlemHeritage";
     static String user = "postgres";
-    static String password = "71805Ml$";
+    static String password = "Hope_2023";
 }
 public class DatabaseConfigurations {
     public static String getUrl() {
