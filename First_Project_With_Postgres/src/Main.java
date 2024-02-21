@@ -28,9 +28,9 @@ public class Main {
         while (true) {
             System.out.println("select [e] to enter. If you would like to quit select [q].");
             String action = userInput.nextLine();
-            while (Objects.equals(action, "e")){
+            if (Objects.equals(action, "e")){
                 Functions.WelcomeS();
-            } if (Objects.equals(action, "q")) {
+            } else if (Objects.equals(action, "q")) {
                 break;
             } else {
                 break;
