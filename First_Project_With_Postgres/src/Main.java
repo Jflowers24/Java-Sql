@@ -1,14 +1,18 @@
 import java.sql.*;
+
 import java.util.Objects;
 import java.util.Scanner;
+=======
+
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
+
 public class Main {
+
     public static void main(String[] args) {
         String url = DatabaseConfigurations.getUrl();
         String user = DatabaseConfigurations.getUser();
