@@ -7,14 +7,14 @@ import java.util.*;
 
 
 public class Functions {
+    static Scanner userInput = new Scanner(System.in);
     public static void MemberS(){
         addMember Members = new addMember() {
             @Override
             public void addMem() {
-                Scanner userInput = new Scanner(System.in);
-                String url = "jdbc:postgresql://localhost:5432/HarlemHeritage";
-                String user = "postgres";
-                String password = "Hope_2023";
+                String url = DatabaseConfigurations.getUrl();
+                String user = DatabaseConfigurations.getUser();
+                String password = DatabaseConfigurations.getPassword();
 
                 Connection connection = null;
                 try {
@@ -62,7 +62,6 @@ public class Functions {
     }
 
 
-    static Scanner userInput = new Scanner(System.in);
 
     public static void OwnerS(){
         ViewOwnerOfBooK Owners = new ViewOwnerOfBooK() {
@@ -408,7 +407,6 @@ public class Functions {
                 try {
                     connection = DriverManager.getConnection(url, user, password);
 
-                    System.out.println("Welcome to HarlemHeritage!");
                     System.out.print("Would you like to [create] a Book instance, [search] for a pre-existing book, or [check in] or [check out] a book? \n>");
                     String action = userInput.nextLine();
 
@@ -420,6 +418,8 @@ public class Functions {
                         CheckInS();
                     }else if (Objects.equals(action, "check out")){
                         CheckOutS();
+                    }else if (Objects.equals(action, "q")){
+                        quitLoop();
                     }
                 }
                 catch (SQLException e){

@@ -1,4 +1,9 @@
 import java.sql.*;
+
+import java.util.Objects;
+import java.util.Scanner;
+=======
+
 import java.sql.Connection;
 import java.sql.SQLException;
 
@@ -9,12 +14,11 @@ import java.sql.SQLException;
 public class Main {
 
     public static void main(String[] args) {
-        Scanner userInput = new Scanner(System.in);
-        String url = "jdbc:postgresql://localhost:5432/HarlemHeritage";
-        String user = "postgres";
-        String password = "Hope_2023";
+        String url = DatabaseConfigurations.getUrl();
+        String user = DatabaseConfigurations.getUser();
+        String password = DatabaseConfigurations.getPassword();
 
-        try (Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/HarlemHeritage", "postgres", "Hope_2023")) {
+        try (Connection connection = DriverManager.getConnection(url, user, password)) {
             System.out.println("successfully Logged in");
             System.out.println("Welcome Back to Harlem Heritage Staff!");
         } catch (SQLException e) {
@@ -24,10 +28,18 @@ public class Main {
 
 
         }
-        Boolean condition = true;
-        while (condition == true) {
+        Scanner userInput = new Scanner(System.in);
+        while (true) {
+            System.out.println("select [e] to enter. If you would like to quit select [q].");
+            String action = userInput.nextLine();
+            if (Objects.equals(action, "e")){
+                Functions.WelcomeS();
+            } else if (Objects.equals(action, "q")) {
+                break;
+            } else {
+                break;
+            }
 
-            Functions.WelcomeS();
         }
 
 
